@@ -8,10 +8,10 @@ class App extends Component {
         super(props);
         
         this.TodoList = [
-            'Đi làm',
-            'Tắm rửa',
-            'Học React',
-            'Đi ngủ'
+            { title: 'Đi làm', isComplete: true },
+            { title: 'Tắm rửa', isComplete: false },
+            { title: 'Học React', isComplete: true},
+            { title: 'Đi ngủ', isComplete: false }
         ];
     }
     
@@ -19,7 +19,7 @@ class App extends Component {
         return (
             <div className="App">
                 {
-                    this.TodoList.map((value, index) => <TodoItem key={ index } title={ value } />)
+                    this.TodoList.map((item, index) => <TodoItem key={ index } item={ item } />)
                 }
             </div>
         );
